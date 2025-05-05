@@ -1,6 +1,7 @@
 let scene, camera, renderer, controls, canvas;
 let cube; // Will hold our cube object
-let objLoader, textureLoader; // loaders
+let objLoader, textureLoader, soundLoader;// loaders
+// const soundFile = ;
 
 function init() {
 
@@ -40,6 +41,26 @@ function init() {
 
     // 8. Lighting Setup
     setupLights();
+
+    // 9. Sound
+    audioLoader = new THREE.AudioLoader();
+    const listener = new THREE.AudioListener();
+    camera.add(listener);
+    // audioLoader.load(soundFile, function(buffer) {
+    //     // Audio loading is complete, you can now create and play sounds
+    //     console.log('Audio file loaded:', soundFile);
+      
+    //     // Example: Create and play background music (non-positional)
+    //     const backgroundSound = new THREE.Audio(listener);
+    //     backgroundSound.setBuffer(buffer);
+    //     backgroundSound.setLoop(true); // Optional: Loop the sound
+    //     backgroundSound.setVolume(0.75); // Optional: Adjust the volume
+    //     backgroundSound.play();
+    //   }, function(xhr) {
+    //     console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+    //   }, function(error) {
+    //     console.error('An error happened during the audio loading:', error);
+    //   });
 
     animate(); // Start the animation loop
 }
