@@ -14,7 +14,7 @@ function init() {
 
     // 3. Renderer setup
     canvas = document.getElementById('threeCanvas');
-    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+    renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, preserveDrawingBuffer: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000); // Black background
 
